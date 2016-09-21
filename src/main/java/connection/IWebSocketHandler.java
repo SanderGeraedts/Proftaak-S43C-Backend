@@ -4,16 +4,16 @@ import org.eclipse.jetty.websocket.api.*;
 import org.eclipse.jetty.websocket.api.annotations.*;
 
 /**
- * Created by sander on 14-9-16.
+ * Created by Sander Geraedts on 14-9-16.
  */
 @WebSocket
-public interface IConnectionHandler {
+public interface IWebSocketHandler {
 
     /**
      * OnWebSocketClose eventhandler. Triggers when the connection closes
      *
      * @param session
-     * @param statusCode The statuscode i.e. 401 for Unauthorized use
+     * @param statusCode The statuscode e.g. 401 for Unauthorized use
      * @param reason Human readable reason.
      */
     @OnWebSocketClose
@@ -37,5 +37,10 @@ public interface IConnectionHandler {
     @OnWebSocketMessage
     public void onMessage(Session session, Object message);
 
+    /**
+     * Send Object to client side.
+     *
+     * @param object
+     */
     public void broadCastObject(Object object);
 }
