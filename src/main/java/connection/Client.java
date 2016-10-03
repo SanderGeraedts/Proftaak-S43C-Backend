@@ -8,5 +8,5 @@ package connection;
  *
  */
 public class Client {
-
+    private String username;
 }
