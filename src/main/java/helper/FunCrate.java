@@ -1,4 +1,4 @@
-package main.java.helper;
+package helper;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
