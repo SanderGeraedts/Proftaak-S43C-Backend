@@ -1,4 +1,4 @@
-package main.java.helper;
+package helper;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -17,7 +17,7 @@ public class FunCrate {
 
         Properties properties = new Properties();
         String propFile = FunCrate.CONFIG_FILE_PATH;
-        InputStream inputStream = properties.getClass().getClassLoader().getResourceAsStream(propFile);
+        InputStream inputStream = FunCrate.class.getClassLoader().getResourceAsStream(propFile);
 
         if(inputStream != null){
             properties.load(inputStream);

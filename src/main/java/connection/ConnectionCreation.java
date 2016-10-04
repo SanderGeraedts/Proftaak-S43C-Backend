@@ -1,5 +1,7 @@
 package connection;
 
+import helper.FunCrate;
+
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
@@ -29,19 +31,8 @@ public class ConnectionCreation {
         int urlLength = 4;
 
         if(this.urlLength == -1){
-
-            Properties properties = new Properties();
-            String propFile = "config/config.properties";
-            InputStream inputStream = getClass().getClassLoader().getResourceAsStream(propFile);
-
-            if(inputStream != null){
-                properties.load(inputStream);
-            } else {
-                throw new FileNotFoundException("property file '" + propFile + "' not found in the classpath");
-            }
-
             try{
-                urlLength = Integer.parseInt(properties.getProperty("urlLength"));
+                urlLength = Integer.parseInt(FunCrate.getConfigValue("urlLength"));
             } catch (NumberFormatException ex) {
                 urlLength = 4;
             }
