@@ -39,6 +39,10 @@ public class ConnectionCreation {
 
             return urlLength;
         } else {
+            if(this.links.size() > 2 * Math.pow(26, this.urlLength)){
+                this.urlLength++;
+            }
+
             return this.urlLength;
         }
 
