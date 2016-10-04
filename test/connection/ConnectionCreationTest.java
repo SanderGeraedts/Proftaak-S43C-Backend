@@ -48,7 +48,7 @@ public class ConnectionCreationTest {
     @Test
     public void addConnectionURL_TimeTest() {
         ArrayList<Long> durations = new ArrayList<Long>();
-        for(int i = 0; i < 10; i++) {
+        for(int i = 0; i < 100; i++) {
             long duration = connectionURLGetTime();
             System.out.println("[" + i + "%]Time to add 456000 items: " + duration + "ms");
 
@@ -89,7 +89,7 @@ public class ConnectionCreationTest {
         boolean crashed = false;
 
         try{
-            for(int i = 0; i < 1000000; i++) {
+            for(int i = 0; i < 10000000; i++) {
                 String url = cc.addConnectionURL();
                 assertFalse(links.contains(url));
                 links.add(url);

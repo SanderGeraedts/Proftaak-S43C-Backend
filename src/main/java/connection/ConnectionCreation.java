@@ -28,24 +28,18 @@ public class ConnectionCreation {
      * @throws IOException
      */
     private int getUrlLength() throws IOException {
-        int urlLength = 4;
-
         if(this.urlLength == -1){
             try{
-                urlLength = Integer.parseInt(FunCrate.getConfigValue("urlLength"));
+                this.urlLength = Integer.parseInt(FunCrate.getConfigValue("urlLength"));
             } catch (NumberFormatException ex) {
-                urlLength = 4;
+                this.urlLength = 4;
             }
-
-            return urlLength;
         } else {
-            if(this.links.size() > 2 * Math.pow(26, this.urlLength)){
+            if(this.links.size() > Math.pow(26, this.urlLength) / 2){
                 this.urlLength++;
             }
-
-            return this.urlLength;
         }
-
+        return this.urlLength;
     }
 
     /**
