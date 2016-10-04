@@ -7,6 +7,19 @@ package connection;
 /**
  *
  */
-public class Client {
+class Client {
+    private int id;
     private String username;
+
+    public Client(int id) {
+        this.id = id;
+    }
+
+    public void addUsername(String username){
+        this.username = username;
+    }
+
+    public String getUsername(){
+        return this.username;
+    }
 }

@@ -107,4 +107,8 @@ public class ConnectionCreation {
     public Boolean checkURLInUse (String url) {
         return this.links.contains(url);
     }
+
+    public int getSize() {
+        return this.links.size();
+    }
 }

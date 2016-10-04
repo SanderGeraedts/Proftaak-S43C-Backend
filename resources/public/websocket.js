@@ -1,0 +1,1 @@
+var webSocket = new WebSocket("ws://" + location.hostname + ":" + location.port + "/general/")

@@ -6,17 +6,9 @@ import org.eclipse.jetty.websocket.api.annotations.OnWebSocketConnect;
 import org.eclipse.jetty.websocket.api.annotations.OnWebSocketMessage;
 
 /**
- * Created by Sander Geraedts on 21-9-16.
+ * Created by Sander Geraedts on 4-10-16.
  */
-public class MonitorClientsHandler implements IWebSocketHandler {
-
-    private String url;
-    private Monitor monitor;
-
-    public MonitorClientsHandler(String url) {
-        this.url = url;
-        this.monitor = new Monitor();
-    }
+public class GeneralWebSocketHandler implements IWebSocketHandler {
 
     @OnWebSocketClose
     public void onClose(Session session, int statusCode, String reason) {
@@ -25,7 +17,7 @@ public class MonitorClientsHandler implements IWebSocketHandler {
 
     @OnWebSocketConnect
     public void onConnect(Session session) throws Exception {
-
+        Server.createConnection();
     }
 
     @OnWebSocketMessage
@@ -36,6 +28,4 @@ public class MonitorClientsHandler implements IWebSocketHandler {
     public void broadCastObject(Object object) {
 
     }
-
-
 }
