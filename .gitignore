@@ -2,9 +2,5 @@
 build/
 dist/
 *.class
-<<<<<<< HEAD
-*.iml
-=======
 FunCrateBackend.iml
 target/
->>>>>>> abe4dc4d193a4990d0ddcd7dc6d28b89c5e5e7d0
